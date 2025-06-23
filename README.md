@@ -82,6 +82,118 @@ spring.datasource.password=your_password
 
 ---
 
+## 🧪 Testing Overview
+
+Includes:
+
+✔️ Unit Tests
+✔️ Integration Tests
+✔️ API Tests
+✔️ Security Tests with JWT mocking
+
+---
+
+## ✔️ Unit Tests (Service Layer)
+
+**Location:** `src/test/java/com/kiit/productManagementApp/service`
+
+| Method                   | Expected Output                        |
+| ------------------------ | -------------------------------------- |
+| `saveProduct(Product)`   | Returns saved product with ID          |
+| `updateProduct(Product)` | Returns updated product details        |
+| `hataoProduct(id)`       | Deletes product and verifies repo call |
+| `filterByCategory()`     | Returns products filtered by category  |
+
+---
+
+## ✔️ Integration Tests (Controller Layer)
+
+**Location:** `src/test/java/com/kiit/productManagementApp/controller`
+
+### Covered Endpoints:
+
+| Endpoint                           | Role       | Expected Output                     |
+| ---------------------------------- | ---------- | ----------------------------------- |
+| `POST /api/products/add`           | ADMIN      | 200 OK with saved product details   |
+| `GET /api/products/all`            | USER/ADMIN | 200 OK with list of all products    |
+| `DELETE /api/products/remove/{id}` | ADMIN      | 200 OK if deletion successful       |
+| `PUT /api/products/modify`         | ADMIN      | 200 OK with updated product details |
+| `GET /api/products/filter/...`     | USER/ADMIN | Filtered product list returned      |
+
+---
+
+## ✔️ API Testing with Postman
+
+### Example: Login
+
+```json
+POST /api/auth/login  
+{
+  "email": "admin@example.com",
+  "password": "admin123"
+}
+```
+
+✅ Returns JWT token
+❌ 401 Unauthorized if credentials invalid
+
+### Example: Get Products (with Token)
+
+```http
+GET /api/products/all  
+Authorization: Bearer <JWT_TOKEN>
+```
+
+✅ 200 OK with product list
+
+---
+
+## ✔️ Security Testing
+
+* `@WithMockUser` used for role-based controller tests
+* JWT token logic mocked during tests
+* Unauthorized scenarios return `401 Unauthorized`
+
+---
+
+## 📊 Test Coverage Snapshot
+
+You can generate coverage reports using:
+
+```bash
+mvn clean test jacoco:report
+```
+
+**Expected Coverage:**
+
+* Service Layer: ✅ \~90%
+* Controller Layer: ✅ 80-90%
+* Repository Logic: ✅ via integration tests
+
+---
+
+## 📂 Project Structure
+
+```
+src
+ ├── main
+ │   ├── java/com/kiit/productManagementApp
+ │   │   ├── controller    # REST Controllers
+ │   │   ├── service       # Business logic
+ │   │   ├── security      # JWT and Security Config
+ │   │   ├── stores        # Repositories
+ │   │   └── model         # Data Models
+ └── test
+     ├── java/com/kiit/productManagementApp
+         ├── controller    # Controller Tests
+         ├── service       # Service Layer Unit Tests
+```
+
+
+
+
+
+
 ### 🌐 Frontend (React.js)
 
 #### 1. Navigate to React Project:
