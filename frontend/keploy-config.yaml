@@ -1,0 +1,6 @@
+name: keploy-product
+app:
+  port: 8080
+  command: "npm start"
+tests:
+  path: ./keploy/test-set
