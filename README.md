@@ -4,6 +4,82 @@ Welcome to the **Product Management Web App** — a feature-rich, modern full-st
 
 ---
 
+```markdown
+# 🚀 API Testing with Keploy – Assignment
+
+## 👨‍💻 Task 1: API Testing with AI + CI/CD Integration
+
+### ✅ Project Overview
+A simple Express.js-based User and Task Management System API with endpoints to create, update, delete, and fetch users and tasks.
+
+### 📁 Project Structure
+
+```
+
+├── --other--
+├── package.json
+├── swagger.yaml
+├── keploy-config.yaml
+└── .github
+└── workflows
+└── keploy.yml
+
+```
+
+### 🧪 Keploy Test Generation via CLI
+
+- Installed Keploy CLI on WSL
+- Ran the app with `keploy record --command "npm start"`
+- Automatically generated test cases from live API usage
+- Test data stored in `keploy/test-set` folder
+
+### 🛠️ CI/CD Integration (GitHub Actions)
+
+- Configured `keploy.yml` workflow for GitHub Actions
+- Runs Keploy tests automatically on every push
+- Ensures test coverage and API stability
+
+### 📸 Keploy Test Dashboard Screenshot
+
+[![Screenshot-2025-06-28-001019.png](https://i.postimg.cc/G3xkJPJL/Screenshot-2025-06-28-001019.png)](https://postimg.cc/Z00BJdM2)
+
+[![Screenshot-2025-06-28-001219.png](https://i.postimg.cc/BQhHRqVR/Screenshot-2025-06-28-001219.png)](https://postimg.cc/1fq8qZPK)
+
+
+---
+
+## 🌐 Task 2: API Testing with Chrome Extension
+
+
+
+### 🔧 Steps Followed
+
+- Cloned Keploy Chrome Extension repo
+- Loaded the extension via `chrome://extensions` → Developer Mode
+- Started recording on the target websites
+- Interacted with live pages to generate API traffic
+- Used the **"Generate Tests"** button to auto-create test cases using Keploy AI
+
+### 🖼️ Chrome Extension Screenshots
+
+[![Screenshot-2025-06-28-013626.png](https://i.postimg.cc/mgJM2mRw/Screenshot-2025-06-28-013626.png)](https://postimg.cc/3kjWtCk4)
+
+---
+
+---
+
+## 💡 What I Learned
+
+- Creating and using OpenAPI specs
+- Recording API traffic to generate realistic test cases
+- Using Keploy CLI + Chrome Extension effectively
+- Integrating Keploy into CI/CD with GitHub Actions
+- Speeding up API testing from hours to minutes using AI
+
+---
+
+
+
 ## 🚀 Live Demo
 
 🔗 **Frontend (Netlify)**: [https://projectmang.netlify.app](https://projectmang.netlify.app)  
