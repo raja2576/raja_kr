@@ -2,9 +2,7 @@
 
 Welcome to the **Product Management Web App** — a feature-rich, modern full-stack application designed for managing products with role-based access. Built with **Spring Boot**, **React.js**, **JWT Authentication**, and PostgreSQL.
 
----
 
-```markdown
 # 🚀 API Testing with Keploy – Assignment
 
 ## 👨‍💻 Task 1: API Testing with AI + CI/CD Integration
